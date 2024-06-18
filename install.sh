@@ -47,7 +47,7 @@ setup_apache_and_files() {
 }
 
 # Determine script directory
-script_dir="$(dirname "$(readlink -f "$BASH_SOURCE")")"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Ensure script is run as root
 if [[ $EUID -ne 0 ]]; then
